@@ -115,7 +115,7 @@
 
 #?(:clj
    (defn -main [& args]
-     (let [ug-seed (or (first args) "20-actors/ugachi/kotoba/seed.edn")
+     (let [ug-seed (or (first args) "kotoba/seed.edn")
            bu-analysis (or (some-> (second args) load-busshi-analysis)
                            (load-busshi-analysis)
                            (throw (ex-info "busshi analysis artifact not found; set BUSSHI_ANALYSIS_PATH" {})))

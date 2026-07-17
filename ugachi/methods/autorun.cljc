@@ -51,7 +51,7 @@
 
 #?(:clj
    (defn -main [& args]
-     (let [ug-seed (or (first args) "20-actors/ugachi/kotoba/seed.edn")
+     (let [ug-seed (or (first args) "kotoba/seed.edn")
            bu-analysis-path (second args) ; optional → enables grounding
            log-path (or (nth args 2 nil)
                         (-> (clojure.java.io/file *file*) .getParentFile .getParentFile

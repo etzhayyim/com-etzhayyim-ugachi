@@ -1,13 +1,13 @@
 #!/usr/bin/env bb
 ;; ugachi 穿ち — ie-flow embedding tests (the SoS scoring leg).
-;; Run:  bb -cp "20-actors:70-tools/src:20-actors/kotodama/src" 20-actors/ugachi/methods/test_ie_flow.cljc
+;; Run:  bb -cp "20-actors:70-tools/src:20-actors/kotodama/src" ugachi/methods/test_ie_flow.cljc
 (ns ugachi.methods.test-ie-flow
   (:require [ugachi.methods.ugachi-edn :as ue]
             [ugachi.methods.ie-flow :as ief]
             [etzhayyim.ie-flow.score :as score]
             [clojure.test :refer [deftest is run-tests]]))
 
-(def seed-path "20-actors/ugachi/kotoba/seed.edn")
+(def seed-path "kotoba/seed.edn")
 (defn- ps [] (ue/projects seed-path))
 
 (deftest events-well-formed

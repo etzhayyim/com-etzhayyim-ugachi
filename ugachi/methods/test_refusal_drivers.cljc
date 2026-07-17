@@ -1,6 +1,6 @@
 #!/usr/bin/env bb
 ;; ugachi 穿ち — tests for the refusal-driver profile (count vs severity).
-;; Run:  bb --classpath 20-actors 20-actors/ugachi/methods/test_refusal_drivers.cljc
+;; Run:  bb --classpath . ugachi/methods/test_refusal_drivers.cljc
 (ns ugachi.methods.test-refusal-drivers
   "Tests for refusal-drivers — among the §2(l) gate's REFUSED projects, which constitutional concern
   drives the refusals by COUNT vs by SEVERITY (summed multigen-risk). Surfaces that the most frequent

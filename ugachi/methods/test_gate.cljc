@@ -1,13 +1,13 @@
 #!/usr/bin/env bb
 ;; ugachi 穿ち — §2(l) gate tests (incl. the constitutional refusal invariants).
-;; Run:  bb --classpath 20-actors 20-actors/ugachi/methods/test_gate.cljc
+;; Run:  bb --classpath . ugachi/methods/test_gate.cljc
 (ns ugachi.methods.test-gate
   (:require [ugachi.methods.ugachi-edn :as ue]
             [ugachi.methods.gate :as g]
             [clojure.string :as str]
             [clojure.test :refer [deftest is run-tests]]))
 
-(def seed-path "20-actors/ugachi/kotoba/seed.edn")
+(def seed-path "kotoba/seed.edn")
 (defn- ps [] (ue/projects seed-path))
 (defn- by-id [id] (first (filter #(= id (:id %)) (ps))))
 (defn- v [id] (:verdict (g/verdict (by-id id))))

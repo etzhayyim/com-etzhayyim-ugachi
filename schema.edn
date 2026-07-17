@@ -1,4 +1,4 @@
-;; 20-actors/ugachi/schema.edn — Datomic/Datascript 互換スキーマ定義
+;; schema.edn — Datomic/Datascript 互換スキーマ定義
 ;; (自動生成 — ugachi actor-local, Phase 4 fan-out, 2026-07-10).
 ;; :db/ident 属性定義のリスト。Datomic 固有キー(:db.install/_attribute 等)は使わない。
 ;; 手編集禁止 — kotoba/seed.edn または kotoba/ontology.ugachi.edn を再変換したら再生成する。

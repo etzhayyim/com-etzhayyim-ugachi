@@ -185,7 +185,7 @@
 
 #?(:clj
    (defn -main [& args]
-     (let [seed (or (first args) "20-actors/ugachi/kotoba/seed.edn")
+     (let [seed (or (first args) "kotoba/seed.edn")
            ps (ue/projects seed)
            a (assess ps)]
        (println (render-report a))

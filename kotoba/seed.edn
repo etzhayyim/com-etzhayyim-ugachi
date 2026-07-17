@@ -9,7 +9,7 @@
 ;; Datomic/Datascript tx-data: one entity per project, namespace :ugachi.project/*
 ;; (per the ontology's own documented namespace, kotoba/ontology.ugachi.edn
 ;; "Attribute namespaces" comment). Loaders normalize this back to legacy bare-keyed
-;; rows transparently — see methods/ugachi_edn.cljc `normalize-rows`.
+;; rows transparently — see ugachi/methods/ugachi_edn.cljc `normalize-rows`.
 [
  ;; — passes the gate → :propose-r0 (reversible, remediated, consented, transparent, diversifying) —
  {:db/id -1 :ugachi.project/type :project :ugachi.project/id "agg-river-a" :ugachi.project/name "Aggregate quarry (riverbed, restorable)" :ugachi.project/resource "aggregate" :ugachi.project/method "open-pit-small" :ugachi.project/jurisdiction :synthetic-1

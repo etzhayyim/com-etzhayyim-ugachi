@@ -1,13 +1,13 @@
 #!/usr/bin/env bb
 ;; ugachi × busshi grounding bridge tests.
-;; Run:  bb --classpath 20-actors 20-actors/ugachi/methods/test_bridge.cljc
+;; Run:  bb --classpath . ugachi/methods/test_bridge.cljc
 (ns ugachi.methods.test-bridge
   (:require [ugachi.methods.ugachi-edn :as ue]
             [ugachi.methods.bridge :as br]
             [ugachi.methods.gate :as gate]
             [clojure.test :refer [deftest is run-tests]]))
 
-(def ug-seed "20-actors/ugachi/kotoba/seed.edn")
+(def ug-seed "kotoba/seed.edn")
 (defn- projects [] (ue/projects ug-seed))
 (def analysis
   {:contract/id :busshi/commodity-analysis

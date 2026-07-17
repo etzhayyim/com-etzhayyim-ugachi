@@ -24,8 +24,8 @@ insufficient. Hard refusals precede recovery routing.
 ## Run
 
 ```bash
-./20-actors/ugachi/run_tests.sh                               # 14 tests / 37 assertions
-bb --classpath 20-actors 20-actors/ugachi/methods/gate.cljc   # print stewardship gate
+./run_tests.clj                               # 14 tests / 37 assertions
+bb --classpath . ugachi/methods/gate.cljc   # print stewardship gate
 ```
 
 R0 synthetic seed → 3 propose-r0 · 1 route-to-recovery · 5 refuse · 2 insufficient.

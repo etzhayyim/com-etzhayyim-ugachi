@@ -35,12 +35,12 @@
   {:n/id "N5" :n/rule "No person-level data; aggregate/project-level only"}]
 
  :actor/methods
- [{:method/id "ugachi_edn" :method/file "methods/ugachi_edn.cljc" :method/role "seed loader + classify"}
-  {:method/id "gate"       :method/file "methods/gate.cljc"       :method/role "verdict → assess → render-datoms → render-report (+ bb CLI)"}
-  {:method/id "bridge"     :method/file "methods/bridge.cljc"     :method/role "Wave 2 (ADR-2606161830): ground monopoly-effect in busshi 物資 concentration → ground-and-assess (+ bb CLI)"}
-  {:method/id "kotoba"     :method/file "methods/kotoba.cljc"     :method/role "Wave 2 (ADR-2606170900): content-addressed append-only STEWARDSHIP LEDGER (tx-cid/make-tx/append-tx/read-log/verify-chain)"}
-  {:method/id "autorun"    :method/file "methods/autorun.cljc"    :method/role "Wave 2 (ADR-2606170900): deterministic heartbeat — assess → append verdict datoms to the ledger (+ bb CLI)"}
-  {:method/id "ie_flow"    :method/file "methods/ie_flow.cljc"    :method/role "SoS score (ADR-2606212200): embeds shared etzhayyim.ie-flow.metrics — assessment → measured flow events (multigen-risk rectified into stewardship verdicts) → order-index/score in the SoS scoreboard; record-flow! to 80-data/ie-flow/ugachi/ (gitignored)"}]
+ [{:method/id "ugachi_edn" :method/file "ugachi/methods/ugachi_edn.cljc" :method/role "seed loader + classify"}
+  {:method/id "gate"       :method/file "ugachi/methods/gate.cljc"       :method/role "verdict → assess → render-datoms → render-report (+ bb CLI)"}
+  {:method/id "bridge"     :method/file "ugachi/methods/bridge.cljc"     :method/role "Wave 2 (ADR-2606161830): ground monopoly-effect in busshi 物資 concentration → ground-and-assess (+ bb CLI)"}
+  {:method/id "kotoba"     :method/file "ugachi/methods/kotoba.cljc"     :method/role "Wave 2 (ADR-2606170900): content-addressed append-only STEWARDSHIP LEDGER (tx-cid/make-tx/append-tx/read-log/verify-chain)"}
+  {:method/id "autorun"    :method/file "ugachi/methods/autorun.cljc"    :method/role "Wave 2 (ADR-2606170900): deterministic heartbeat — assess → append verdict datoms to the ledger (+ bb CLI)"}
+  {:method/id "ie_flow"    :method/file "ugachi/methods/ie_flow.cljc"    :method/role "SoS score (ADR-2606212200): embeds shared etzhayyim.ie-flow.metrics — assessment → measured flow events (multigen-risk rectified into stewardship verdicts) → order-index/score in the SoS scoreboard; record-flow! to 80-data/ie-flow/ugachi/ (gitignored)"}]
 
  :actor/lex
  [{:lex/id "extractionVerdict"}
@@ -60,6 +60,14 @@
 
  :actor/tests
  {:runner "babashka"
-  :cmd "./20-actors/ugachi/run_tests.sh"
-  :suites ["methods/test_ugachi_edn.cljc" "methods/test_gate.cljc" "methods/test_bridge.cljc"
-           "methods/test_kotoba.cljc" "methods/test_autorun.cljc"]}}
+  :cmd "bb run_tests.clj"
+  :command ["bb" "run_tests.clj"]
+  :tests 40
+  :assertions 114
+  :suites ["ugachi/methods/test_ugachi_edn.cljc"
+           "ugachi/methods/test_gate.cljc"
+           "ugachi/methods/test_bridge.cljc"
+           "ugachi/methods/test_kotoba.cljc"
+           "ugachi/methods/test_autorun.cljc"
+           "ugachi/methods/test_ie_flow.cljc"
+           "ugachi/methods/test_refusal_drivers.cljc"]}}

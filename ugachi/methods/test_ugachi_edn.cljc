@@ -1,11 +1,11 @@
 #!/usr/bin/env bb
 ;; ugachi 穿ち — loader tests.
-;; Run:  bb --classpath 20-actors 20-actors/ugachi/methods/test_ugachi_edn.cljc
+;; Run:  bb --classpath . ugachi/methods/test_ugachi_edn.cljc
 (ns ugachi.methods.test-ugachi-edn
   (:require [ugachi.methods.ugachi-edn :as ue]
             [clojure.test :refer [deftest is run-tests]]))
 
-(def seed-path "20-actors/ugachi/kotoba/seed.edn")
+(def seed-path "kotoba/seed.edn")
 
 (deftest parse-edn-roundtrips
   (let [rows (ue/parse-edn "[{:type :project :id \"x\" :resource \"copper\"}]")]

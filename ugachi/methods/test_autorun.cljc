@@ -1,6 +1,6 @@
 #!/usr/bin/env bb
 ;; ugachi 穿ち — heartbeat tests (assess → persist → verify).
-;; Run:  bb --classpath 20-actors 20-actors/ugachi/methods/test_autorun.cljc
+;; Run:  bb --classpath . ugachi/methods/test_autorun.cljc
 (ns ugachi.methods.test-autorun
   (:require [ugachi.methods.ugachi-edn :as ue]
             [ugachi.methods.autorun :as ar]
@@ -9,7 +9,7 @@
             [clojure.test :refer [deftest is run-tests]]
             [clojure.java.io :as io]))
 
-(def ug-seed "20-actors/ugachi/kotoba/seed.edn")
+(def ug-seed "kotoba/seed.edn")
 (defn- tmp [] (str (System/getProperty "java.io.tmpdir") "/ugachi-autorun-test-" (gensym) ".edn"))
 (defn- projects [] (ue/projects ug-seed))
 (def analysis

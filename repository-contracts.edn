@@ -1,0 +1,13 @@
+{:schema-version 1
+ :repository "etzhayyim/com-etzhayyim-ugachi"
+ :classification :actor
+ :canonical-actor-metadata "manifest.edn"
+ :canonical-data-format :edn
+ :dependencies [{:repository "etzhayyim/com-etzhayyim-ie-flow"
+                 :revision "35d36d912c9596dbc5094947b60202d9abdf61e6"
+                 :classpath "src"}
+                {:repository "etzhayyim/com-etzhayyim-kotoba-datom"
+                 :revision "3c4b3b92234e59ba285119fd8b2ca4c2ee172ff8"
+                 :classpath "src"}]
+ :external-wire-formats #{}
+ :tests {:command ["bb" "run_tests.clj"]}}

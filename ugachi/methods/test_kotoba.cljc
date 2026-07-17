@@ -1,6 +1,6 @@
 #!/usr/bin/env bb
 ;; ugachi 穿ち — stewardship-ledger persistence tests.
-;; Run:  bb --classpath 20-actors 20-actors/ugachi/methods/test_kotoba.cljc
+;; Run:  bb --classpath . ugachi/methods/test_kotoba.cljc
 (ns ugachi.methods.test-kotoba
   (:require [ugachi.methods.kotoba :as k]
             [clojure.test :refer [deftest is run-tests]]

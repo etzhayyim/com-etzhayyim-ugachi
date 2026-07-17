@@ -62,7 +62,7 @@
 #?(:clj
    (defn -main [& args]
      (let [flags (set (filter #(str/starts-with? % "--") args))
-           seed (or (first (remove #(str/starts-with? % "--") args)) "20-actors/ugachi/kotoba/seed.edn")
+           seed (or (first (remove #(str/starts-with? % "--") args)) "kotoba/seed.edn")
            projects (ue/projects seed)
            st (flow-state projects)]
        (println (iem/summary-line st))
